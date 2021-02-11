@@ -5,8 +5,7 @@ public class Licencia {
 	private String tipo_licencia;
 	private String data_caducidad;
 
-	public Licencia(String nombre, String apellidos, String data_naixement, int id,
-			String tipo_licencia, String data_caducidad) {
+	public Licencia(int id, String tipo_licencia, String data_caducidad) {
 		super();
 		this.id = id;
 		this.tipo_licencia = tipo_licencia;
@@ -40,9 +39,9 @@ public class Licencia {
 
 	@Override
 	public String toString() {
-		return super.toString()+"ID: "+ id +"\n"+
-								"Tipo de licencia: "+ tipo_licencia +"\n"+
-								"Data caducidad: "+ data_caducidad +"\n";
+		return "ID: "+ id +"\n"+
+				"Tipo de licencia: "+ tipo_licencia +"\n"+
+				"Data caducidad: "+ data_caducidad +"\n";
 	}
 
 }

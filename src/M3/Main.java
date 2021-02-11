@@ -11,23 +11,20 @@ public class Main {
 		ArrayList<Camion> camiones = new ArrayList<Camion>();
 		ArrayList<Conductor> conductores = new ArrayList<Conductor>();
 		ArrayList<Titular> titulares = new ArrayList<Titular>();
-		ArrayList<Licencia> licencias = new ArrayList<Licencia>();
-		
-		
-		Coche t1 = new Coche("1234AA", "Ford", "Azul", 0.6, 3.2, "Dunlop","Dunlop");
-		Coche t2 = new Coche("1444AA", "Ferrari", "Rojo", 3.5, 1.5, "Michelin","Brigeston");
-		Coche t3 = new Coche("9434AA", "Nissan", "Blanco", 2.0, 3.0, "Michelin","Michelin");
-
-		Conductor p1 = new Conductor("David", "Lascorz", "23/03/1992");
-		Conductor p2 = new Conductor("Carlos", "Martinez", "23/03/1992");
-		Conductor p3 = new Conductor("Victor", "Lopera", "23/03/1992");
-
-		Titular x1 = new Titular("Emma", "Garcia", "23/03/1992",true,false);
 
 		
-		coches.add(t1);
-		coches.add(t2);
-		coches.add(t3);
+		
+		Licencia l1 = new Licencia(48026643,"Camion","11/02/2021");
+		Licencia l2 = new Licencia(48026643,"Moto","11/02/2021");
+		Licencia l3 = new Licencia(48026643,"Coche","11/02/2021");
+
+		Conductor p1 = new Conductor("David", "Lascorz", "23/03/1992", l3);
+		Conductor p2 = new Conductor("Carlos", "Martinez", "23/03/1992", l2);
+		Conductor p3 = new Conductor("Victor", "Lopera", "23/03/1992", l1);
+
+		Titular x1 = new Titular("Emma", "Garcia", "23/03/1992", l1, true, false);
+
+		
 
 		
 		conductores.add(p1);
@@ -36,6 +33,16 @@ public class Main {
 
 		titulares.add(x1);
 
+		
+		Coche t1 = new Coche("1234AA", "Ford", "Azul",conductores,x1, 0.6, 3.2, "Dunlop","Dunlop");
+		Coche t2 = new Coche("1444AA", "Ferrari", "Rojo",conductores,x1, 3.5, 1.5, "Michelin","Brigeston");
+		Coche t3 = new Coche("9434AA", "Nissan", "Blanco",conductores,x1, 2.0, 3.0, "Michelin","Michelin");
+		
+		coches.add(t1);
+		coches.add(t2);
+		coches.add(t3);
+		
+		
 		Scanner teclado = new Scanner(System.in);
 
 		System.out.println("#################");
@@ -75,7 +82,7 @@ public class Main {
 				System.out.println("Introduce la marca de las ruedas trasera?");
 				String marca_trasera = teclado.next();
 
-				Coche c1 = new Coche(matricula, marca, color, diametro_delantero, diametro_trasero, marca_delantero,
+				Coche c1 = new Coche(matricula, marca, color,conductores,x1, diametro_delantero, diametro_trasero, marca_delantero,
 						marca_trasera);
 
 				coches.add(c1);
@@ -100,7 +107,7 @@ public class Main {
 				System.out.println("Introduce la marca de las ruedas trasera?");
 				String marca_trasera2 = teclado.next();
 
-				Moto c2 = new Moto(matricula2, marca2, color2, diametro_delantero2, diametro_trasero2, marca_delantero2,
+				Moto c2 = new Moto(matricula2, marca2, color2,conductores,x1, diametro_delantero2, diametro_trasero2, marca_delantero2,
 						marca_trasera2);
 
 				motos.add(c2);
@@ -122,7 +129,7 @@ public class Main {
 				System.out.println("Introduce la marca de las ruedas trasera?");
 				String marca_trasera3 = teclado.next();
 
-				Camion c3 = new Camion(matricula3, marca3, color3, diametro_delantero3, diametro_trasero3,
+				Camion c3 = new Camion(matricula3, marca3, color3,conductores,x1, diametro_delantero3, diametro_trasero3,
 						marca_delantero3, marca_trasera3);
 
 				camiones.add(c3);
@@ -168,9 +175,9 @@ public class Main {
 				System.out.println("Introduce la marca de las ruedas delantera?");
 				boolean licencia = teclado.nextBoolean();
 
-				Conductor c4 = new Conductor(nombre, apellidos, fecha);
+				Conductor c4 = new Conductor(nombre, apellidos, fecha, l1);
 
-				conductores.add(c4);
+				//conductores.add(c4);
 
 				System.out.print(c4);
 				break;
@@ -184,9 +191,9 @@ public class Main {
 				System.out.println("Introduce la marca de las ruedas delantera?");
 				boolean licencia2 = teclado.nextBoolean();
 
-				Conductor c5 = new Conductor(nombre2, apellidos2, fecha2);
+				Conductor c5 = new Conductor(nombre2, apellidos2, fecha2 , l1);
 
-				conductores.add(c5);
+				//conductores.add(c5);
 
 				System.out.print(c5);
 				break;

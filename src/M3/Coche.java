@@ -1,18 +1,22 @@
 package M3;
 
+import java.util.ArrayList;
+
 public class Coche extends Vehiculo {
 	private double diametro_delantera;
 	private double diametro_trasera;
 	private String marca_rueda_delantera;
 	private String marca_rueda_trasera;
 	
-	public Coche(String matricula, String marca, String color, double diametro_delantera, double diametro_trasera, String marca_rueda_delantera, String marca_rueda_trasera) {
-		super(matricula, marca, color);
+	public Coche(String matricula, String marca, String color,ArrayList<Conductor> conductor, Titular titular, double diametro_delantera, double diametro_trasera, String marca_rueda_delantera, String marca_rueda_trasera) {
+		super(matricula, marca, color, conductor, titular);
 		this.diametro_delantera = diametro_delantera;
 		this.diametro_trasera = diametro_trasera;
 		this.marca_rueda_delantera = marca_rueda_delantera;
 		this.marca_rueda_trasera = marca_rueda_trasera;
 	}
+
+
 
 	public double getDiametro_delantera() {
 		return diametro_delantera;

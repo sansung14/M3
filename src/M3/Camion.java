@@ -1,5 +1,6 @@
 package M3;
 
+import java.util.ArrayList;
 
 public class Camion extends Vehiculo {
 	private double diametro_delantera;
@@ -7,8 +8,8 @@ public class Camion extends Vehiculo {
 	private String marca_rueda_delantera;
 	private String marca_rueda_trasera;
 	
-	public Camion(String matricula, String marca, String color, double diametro_delantera, double diametro_trasera, String marca_rueda_delantera, String marca_rueda_trasera) {
-		super(matricula, marca, color);
+	public Camion(String matricula, String marca, String color,ArrayList<Conductor> conductor, Titular titular, double diametro_delantera, double diametro_trasera, String marca_rueda_delantera, String marca_rueda_trasera) {
+		super(matricula, marca, color, conductor, titular);
 		this.diametro_delantera = diametro_delantera;
 		this.diametro_trasera = diametro_trasera;
 		this.marca_rueda_delantera = marca_rueda_delantera;
