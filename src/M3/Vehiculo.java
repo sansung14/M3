@@ -25,10 +25,31 @@ public class Vehiculo {
 		this.color = color;
 	}
 	
-	public void matriculaCorrecta(String a){
-		if(a.charAt(5)>0) {
-			
-		}
+	public boolean matriculaCorrecta(){
+		for (int i = 0; i < this.matricula.length(); i++) {
+            if (this.matricula.length() < 7) {
+                this.matricula = matricula + " ";
+            }
+        }
+        if (this.matricula.length() == 7) {
+            for (int i = 0; i < 4; i++) {
+                if (matricula.charAt(i) >= '0' && matricula.charAt(i) <= '9') {
+                } else {
+                    return false;
+                }
+            }
+            for (int i = 4; i < 6; i++) {
+                if (matricula.charAt(i) >= 'A' && matricula.charAt(i) <= 'Z') {
+                } else {
+                    return false;
+                }
+            }
+            if (matricula.charAt(6) >= 'A' && matricula.charAt(6) <= 'Z' || matricula.charAt(6) == ' ') {
+                return true;
+            }
+        }
+        return false;
+
 		
 	}
 	
@@ -42,7 +63,12 @@ public class Vehiculo {
 	
 	
 	
-	
+	public String toString() {
+		return "Coche:"  + "\n" +
+				"Matricula: " + matricula + "\n"+
+				"Marca vehiculo: " + marca + "\n"+
+				"Color: " + color + "\n";
+	}
 	
 	
 }
