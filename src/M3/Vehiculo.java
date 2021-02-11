@@ -67,16 +67,26 @@ public class Vehiculo {
 		this.titular = titular;
 		this.conductor = conductor;
 	}
-
+	public Vehiculo(String matricula, String marca, String color, Titular titular) {
+		this.matricula = matricula;
+		this.marca = marca;
+		this.color = color;
+		this.titular = titular;
+	}
 
 
 	public String toString() {
 		String lista = "Coche:" + "\n" + "Matricula: " + matricula + "\n" + "Marca vehiculo: " + marca + "\n" + "Color: "
 				+ color + "\n" + "Titular: " + titular.nombre + " " + titular.apellidos + "\n" + 	"Conductores: \n";
 		lista+="-----------------\n";
-		for(int i=0;i<conductor.size();i++) {
-			lista+=conductor.get(i).getNombre() + " " +conductor.get(i).apellidos +"\n";
+		if(conductor != null) {
+			for(int i=0;i<conductor.size();i++) {
+				lista+=conductor.get(i).getNombre() + " " +conductor.get(i).apellidos +"\n";
+			}
+		}else {
+			lista+="ninguno";
 		}
+
 		lista+="-----------------\n";
 
 

@@ -16,6 +16,14 @@ public class Camion extends Vehiculo {
 		this.marca_rueda_trasera = marca_rueda_trasera;
 	}
 
+	public Camion(String matricula, String marca, String color, Titular titular, double diametro_delantera, double diametro_trasera, String marca_rueda_delantera, String marca_rueda_trasera) {
+		super(matricula, marca, color, titular);
+		this.diametro_delantera = diametro_delantera;
+		this.diametro_trasera = diametro_trasera;
+		this.marca_rueda_delantera = marca_rueda_delantera;
+		this.marca_rueda_trasera = marca_rueda_trasera;
+	}
+	
 	public double getDiametro_delantera() {
 		return diametro_delantera;
 	}

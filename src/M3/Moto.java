@@ -17,6 +17,13 @@ public class Moto extends Vehiculo {
 		this.marca_rueda_trasera = marca_rueda_trasera;
 	}
 	
+	public Moto(String matricula, String marca, String color, Titular titular, double diametro_delantera, double diametro_trasera, String marca_rueda_delantera, String marca_rueda_trasera) {
+		super(matricula, marca, color, titular);
+		this.diametro_delantera = diametro_delantera;
+		this.diametro_trasera = diametro_trasera;
+		this.marca_rueda_delantera = marca_rueda_delantera;
+		this.marca_rueda_trasera = marca_rueda_trasera;
+	}
 	
 	public boolean comprobarDiametro() {
 		if((this.diametro_delantera>0.4 && this.diametro_delantera<4.0) && (this.diametro_trasera>0.4 && this.diametro_trasera<4.0)) {
